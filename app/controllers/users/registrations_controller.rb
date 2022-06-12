@@ -10,10 +10,14 @@ class Users::RegistrationsController < Devise::RegistrationsController
   end
 
   def register_success
-    render json: { message: 'Signed up successfully' }, status: :created
+    render json: {
+      message: 'Signed up successfully'
+    }, status: :created
   end
 
   def register_failed
-    render json: { message: 'Something went wrong' }, status: :bad_request
+    render json: {
+      message: 'Something went wrong'
+    }, status: :bad_request
   end
 end

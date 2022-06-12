@@ -4,6 +4,8 @@ class TestController < ApplicationController
   before_action :is_user_logged_in
 
   def show
-    render json: { message: "If you see this, you're logged in!" }, status: :ok
+    render json: {
+      message: "If you see this, you're logged in!"
+    }, status: :ok
   end
 end
