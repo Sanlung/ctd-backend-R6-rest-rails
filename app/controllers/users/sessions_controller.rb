@@ -6,9 +6,13 @@ class Users::SessionsController < Devise::SessionsController
   def respond_with(resource, _opts = {})
     if !resource.id.nil?
       response.set_header('Access-Control-Expose-Headers', 'authorization')
-      render json: { message: 'You are logged in.' }, status: :created
+      render json: {
+        message: 'You are logged in.'
+      }, status: :created
     else
-      render json: { message: 'Authentication failed.' }, status: :unauthorized
+      render json: {
+        message: 'Authentication failed.'
+      }, status: :unauthorized
     end
   end
 
@@ -19,10 +23,14 @@ class Users::SessionsController < Devise::SessionsController
   end
 
   def log_out_success
-    render json: { message: 'You are logged out.' }, status: :ok
+    render json: {
+      message: 'You are logged out.'
+    }, status: :ok
   end
 
   def log_out_failure
-    render json: { message: 'Hmm nothing happened.' }, status: :unauthorized
+    render json: {
+      message: 'Hmm nothing happened.'
+    }, status: :unauthorized
   end
 end
